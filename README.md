@@ -6,4 +6,4 @@
 #####2.添加空对象(nil)到数组异常
 #####3.字典参数不规范(nil)异常
 #####4.使用Nan(not a number)设置到view的frame导致的异常
-#####5.循环引用(weakself,strongself)
+#####5.block循环引用的解决办法(weakself,strongself宏配对使用)

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "NSObject+safe.h"
+
 @interface AppDelegate ()
 
 @end
@@ -28,6 +30,12 @@
     
     CGRect frame = CGRectMake(0.0 / 0.0, 0, 0, 0);//x is nan
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    
+    WEAK_SELF;
+    [UIView animateWithDuration:.3f animations:^{
+        STRONG_SELF;
+        NSLog(@"%@",self);//self can release safely
+    }];
     
     return YES;
 }
